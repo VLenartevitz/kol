@@ -18,10 +18,7 @@ const metadata = {
     openGraph: {
         title: "KOL Nutrição em Saúde da Mulher",
         description: "Estratégias nutricionais personalizadas para mulheres que buscam saúde, autonomia, performance e bem-estar.",
-        type: "website",
-        images: [
-            "/images/brand/kol-hero.png"
-        ]
+        type: "website"
     }
 };
 function RootLayout({ children }) {
@@ -31,12 +28,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/app/layout.tsx",
-            lineNumber: 25,
+            lineNumber: 24,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 24,
+        lineNumber: 23,
         columnNumber: 5
     }, this);
 }

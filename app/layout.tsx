@@ -11,18 +11,17 @@ export const metadata: Metadata = {
     description:
       "Estratégias nutricionais personalizadas para mulheres que buscam saúde, autonomia, performance e bem-estar.",
     type: "website",
-    images: ["/images/brand/kol-hero.png"],
   },
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="pt-BR">
       <body>{children}</body>
     </html>
-  )
+  );
 }

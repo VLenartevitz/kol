@@ -1,9 +1,12 @@
 import {
+  about,
   differentials,
   faqs,
+  hero,
   metrics,
   navigation,
-  portfolio,
+  plans,
+  principles,
   process,
   services,
   site,
@@ -31,12 +34,12 @@ export default function Page() {
 
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="#inicio" aria-label="KOL inicio">
+          <a className="brand" href="#inicio" aria-label="KOL início">
             <span className="brand-mark">K</span>
             <span>KOL</span>
           </a>
 
-          <nav className="nav" aria-label="Navegacao principal">
+          <nav className="nav" aria-label="Navegação principal">
             {navigation.map((item) => (
               <a key={item.href} href={item.href}>
                 {item.label}
@@ -53,33 +56,45 @@ export default function Page() {
       <main id="inicio">
         <section className="hero">
           <div className="container hero-grid">
-            <div>
-              <span className="eyebrow">{site.descriptor}</span>
-              <h1>Nutrir sua saúde e também a sua história.</h1>
-              <p>
-                Estratégias nutricionais personalizadas para mulheres que buscam
-                performance, estética, autonomia e uma rotina alimentar possível
-                de sustentar.
-              </p>
+            <div className="hero-copy">
+              <span className="eyebrow">{hero.eyebrow}</span>
+              <h1>{hero.title}</h1>
+              <p className="hero-description">{hero.description}</p>
+
               <div className="hero-actions">
                 <a className="button" href="#contato">
                   Quero agendar
                 </a>
-                <a className="button secondary" href="#servicos">
-                  Conhecer servicos
+                <a className="button secondary" href="#planos">
+                  Ver planos
                 </a>
+              </div>
+
+              <div className="hero-meta">
+                {hero.highlights.map((item) => (
+                  <div key={item.title}>
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="hero-media" aria-label="Identidade visual KOL">
-              <img
-                src="/images/brand/kol-hero.png"
-                alt="KOL Nutricao por Thays Kohl"
-                fetchPriority="high"
-              />
-              <div className="media-note">
-                Cuidado nutricional com escuta, evidência e estratégia para a
-                mulher em todas as fases.
+            <div className="hero-image" aria-label="Foto da Thays Kohl">
+              <div className="hero-portrait">
+                <img
+                  src="/images/thays.png"
+                  alt="Thays Kohl"
+                  fetchPriority="high"
+                />
+              </div>
+              <div className="hero-visual-note">
+                <span className="eyebrow">KOL</span>
+                <strong>Presença, acolhimento e autoridade clínica.</strong>
+                <p>
+                  A foto real reforça a identidade da marca sem competir com a
+                  mensagem principal da página.
+                </p>
               </div>
             </div>
           </div>
@@ -87,30 +102,26 @@ export default function Page() {
 
         <section className="section alt" id="sobre">
           <div className="container about-grid">
-            <div className="about-image">
-              <img
-                src="/images/brand/thays-profile.png"
-                alt="Apresentacao de Thays Kohl"
-                loading="lazy"
-              />
-            </div>
             <div className="about-copy">
-              <span className="eyebrow">Sobre a KOL</span>
-              <h2>Um olhar humano, técnico e integrativo.</h2>
-              <p>
-                A KOL nasce para atender mulheres que querem cuidar da
-                alimentação sem perder sua rotina, suas preferências e sua
-                individualidade. A metodologia une nutrição baseada em
-                evidências, acompanhamento próximo e clareza para transformar
-                orientações em prática.
-              </p>
-              <p>
-                A frente da marca, Thays Kohl conduz um atendimento acolhedor e
-                estratégico para saúde feminina, estética, esporte e mudanças de
-                hábito com constância.
-              </p>
-              <div className="quote-panel">
-                Comer bem hoje é o que protege sua vitalidade amanhã.
+              <span className="eyebrow">{about.eyebrow}</span>
+              <h2>{about.title}</h2>
+
+              {about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+
+              <div className="quote-panel">{about.quote}</div>
+            </div>
+
+            <div className="about-editorial">
+              <div className="about-frame">
+                <div className="about-frame-inner">
+                  <span className="about-frame-kicker">{about.card.eyebrow}</span>
+                  <div className="about-frame-copy">
+                    <strong>{about.card.title}</strong>
+                    <p>{about.card.text}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -121,11 +132,11 @@ export default function Page() {
             <div className="section-head">
               <div>
                 <span className="eyebrow">Serviços</span>
-                <h2>O que a KOL entrega</h2>
+                <h2>Como a KOL pode te acompanhar</h2>
               </div>
               <p>
-                Planos de cuidado para diferentes momentos: do primeiro ajuste
-                alimentar a um acompanhamento premium com foco em transformação.
+                O acompanhamento nutricional é construído para respeitar sua fase
+                de vida, sua rotina e os objetivos que fazem sentido para você.
               </p>
             </div>
 
@@ -146,13 +157,14 @@ export default function Page() {
             <div className="section-head">
               <div>
                 <span className="eyebrow">Diferenciais</span>
-                <h2>Por que escolher a KOL</h2>
+                <h2>Uma metodologia pensada para a mulher real</h2>
               </div>
               <p>
-                A metodologia foi desenhada para reduzir fricção, aumentar
-                adesão e respeitar a vida real de cada paciente.
+                Mais do que um plano alimentar, o acompanhamento é construído
+                com proximidade, estratégia e adaptação à sua realidade.
               </p>
             </div>
+
             <div className="differentials">
               {differentials.map((item) => (
                 <div className="differential" key={item}>
@@ -160,30 +172,58 @@ export default function Page() {
                 </div>
               ))}
             </div>
+
+            <div className="principles">
+              {principles.map((item) => (
+                <div className="principle" key={item.title}>
+                  <span className="eyebrow">{item.title}</span>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="section" id="cases">
+        <section className="section" id="planos">
           <div className="container">
             <div className="section-head">
               <div>
-                <span className="eyebrow">Portfólio e planos</span>
-                <h2>Caminhos de acompanhamento</h2>
+                <span className="eyebrow">Planos</span>
+                <h2>Acompanhamentos pensados para diferentes momentos da sua jornada</h2>
               </div>
               <p>
-                Estrutura preparada para substituir por cases reais, projetos,
-                depoimentos ou pacotes finais quando a copy comercial estiver
-                fechada.
+                Escolha o formato ideal para o seu momento, com acompanhamento
+                individualizado, ajustes estratégicos e suporte próximo durante o processo.
               </p>
             </div>
+
             <div className="grid three">
-              {portfolio.map((item) => (
-                <article className="portfolio-card card" key={item.title}>
-                  <img src={item.image} alt={item.title} loading="lazy" />
-                  <div className="card">
-                    <span className="tag">{item.tag}</span>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
+              {plans.map((plan) => (
+                <article className="plan-card card" key={plan.title}>
+                  <div className="plan-shell">
+                    <span className="tag">{plan.tag}</span>
+                    <h3>{plan.title}</h3>
+                    <strong className="plan-price">{plan.price}</strong>
+
+                    <p className="plan-highlight">{plan.highlight}</p>
+
+                    <div className="plan-block">
+                      <strong>Para quem é</strong>
+                      <p>{plan.audience}</p>
+                    </div>
+
+                    <div className="plan-block">
+                      <strong>O que inclui</strong>
+                      <ul className="plan-list">
+                        {plan.includes.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <a className="button secondary" href="#contato">
+                      Quero este plano
+                    </a>
                   </div>
                 </article>
               ))}
@@ -196,13 +236,14 @@ export default function Page() {
             <div className="section-head">
               <div>
                 <span className="eyebrow">Processo</span>
-                <h2>Da conversa inicial à evolução</h2>
+                <h2>Da avaliação inicial à sua evolução com consistência</h2>
               </div>
               <p>
-                Uma jornada simples para que a paciente saiba exatamente o que
-                acontece depois do primeiro contato.
+                O acompanhamento é pensado para transformar orientação em prática,
+                com um caminho claro, individualizado e sustentável.
               </p>
             </div>
+
             <div className="process-list">
               {process.map((item) => (
                 <article className="process-card" key={item.step}>
@@ -217,7 +258,7 @@ export default function Page() {
 
         <section className="section">
           <div className="container proof-grid">
-            <div className="metrics">
+            <div className="metrics metrics-stack">
               {metrics.map((metric) => (
                 <div className="metric" key={metric.label}>
                   <strong>{metric.value}</strong>
@@ -225,6 +266,7 @@ export default function Page() {
                 </div>
               ))}
             </div>
+
             <div className="testimonials">
               {testimonials.map((testimonial) => (
                 <blockquote className="testimonial" key={testimonial.quote}>
@@ -241,13 +283,13 @@ export default function Page() {
             <div className="section-head">
               <div>
                 <span className="eyebrow">FAQ</span>
-                <h2>Duvidas frequentes</h2>
+                <h2>Dúvidas frequentes</h2>
               </div>
               <p>
-                Respostas para objeções comuns antes do agendamento. Tudo pode
-                ser refinado quando os detalhes comerciais forem definidos.
+                Algumas respostas para dúvidas comuns antes de iniciar seu acompanhamento.
               </p>
             </div>
+
             <div className="faq-list">
               {faqs.map((faq) => (
                 <details className="faq" key={faq.question}>
@@ -263,12 +305,14 @@ export default function Page() {
           <div className="container contact">
             <div className="contact-panel">
               <span className="eyebrow">CTA final</span>
-              <h2>Vamos desenhar seu plano?</h2>
+              <h2>
+                Comer bem hoje é o que garante a sua independência e vitalidade amanhã.
+              </h2>
               <p>
-                Envie uma mensagem para iniciar o atendimento ou deixe seus
-                dados no formulário. O CTA pode apontar para WhatsApp, CRM ou
-                ferramenta de formulário na próxima etapa.
+                Invista no seu futuro com um acompanhamento nutricional pensado para
+                a sua rotina, seus objetivos e a fase de vida que você está vivendo agora.
               </p>
+
               <div className="section-actions">
                 <a className="button" href={site.whatsapp}>
                   Chamar no WhatsApp
@@ -281,6 +325,7 @@ export default function Page() {
                 <label htmlFor="name">Nome</label>
                 <input id="name" name="name" placeholder="Seu nome" />
               </div>
+
               <div className="field">
                 <label htmlFor="email">E-mail</label>
                 <input
@@ -290,14 +335,38 @@ export default function Page() {
                   placeholder="voce@email.com"
                 />
               </div>
+
+              <div className="field">
+                <label htmlFor="phone">WhatsApp</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  placeholder="(00) 00000-0000"
+                />
+              </div>
+
+              <div className="field">
+                <label htmlFor="plan">Plano de interesse</label>
+                <select id="plan" name="plan" defaultValue="">
+                  <option value="" disabled>
+                    Selecione uma opção
+                  </option>
+                  <option value="mensal">Plano mensal</option>
+                  <option value="trimestral">Plano trimestral</option>
+                  <option value="semestral">Plano semestral</option>
+                  <option value="nao-sei">Ainda não sei</option>
+                </select>
+              </div>
+
               <div className="field">
                 <label htmlFor="message">Objetivo</label>
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="Conte brevemente o que você busca."
+                  placeholder="Conte brevemente o que você busca no acompanhamento."
                 />
               </div>
+
               <button className="button" type="submit">
                 Enviar interesse
               </button>
@@ -317,11 +386,12 @@ export default function Page() {
               {site.descriptor} por {site.professional}. {site.location}.
             </p>
           </div>
+
           <div className="footer-links">
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <a href={site.instagram}>Instagram</a>
-            <a href="#inicio">Politica de privacidade</a>
-            <span>© 2026 KOL</span>
+            <a href="#inicio">Política de privacidade</a>
+            <span>&copy; 2026 KOL</span>
           </div>
         </div>
       </footer>

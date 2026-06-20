@@ -1,2 +1,11 @@
 node_modules
 specs
+.next/
+.next/dev
+.next/static
+.next/server
+dist
+build
+.DS_Store
+*.log
+*.lock
