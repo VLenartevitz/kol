@@ -1,3 +1,0 @@
-module.exports=[33290,a=>{"use strict";var b=a.i(7997);let c={metadataBase:new URL("https://kolnutricao.com.br"),title:"KOL Nutrição em Saúde da Mulher | Thays Kohl",description:"Landing page da KOL, nutrição em saúde da mulher com acompanhamento personalizado, performance, estética e cuidado integrativo.",openGraph:{title:"KOL Nutrição em Saúde da Mulher",description:"Estratégias nutricionais personalizadas para mulheres que buscam saúde, autonomia, performance e bem-estar.",type:"website"}};a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"pt-BR",children:(0,b.jsx)("body",{children:a})})},"metadata",0,c])},70864,a=>{a.n(a.i(33290))}];
-
-//# sourceMappingURL=app_layout_tsx_2144vk_._.js.map
