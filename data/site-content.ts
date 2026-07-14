@@ -1,11 +1,12 @@
 export const site = {
   professional: "Thays Kohl",
   descriptor: "Nutrição em saúde da mulher, estética e performance",
-  email: "contato@kolnutricao.com.br",
+  email: "kohl.thays20@gmail.com",
+  email2: "mickaellaoliveira06@gmail.com",
   phone: "(00) 00000-0000",
   whatsapp: "https://wa.me/5500000000000",
-  instagram: "https://instagram.com/kolnutricao",
-  location: "Atendimento online e presencial sob consulta",
+  instagram: "https://www.instagram.com/thayskohlp/",
+  location: "Atendimento online",
 };
 
 export const navigation = [
@@ -19,9 +20,8 @@ export const navigation = [
 ];
 
 export const hero = {
-  eyebrow: "Nutrição personalizada para mulheres",
   title:
-    "Nutrição personalizada para mulheres que querem mais saúde, performance e autoestima em todas as fases da vida.",
+    "Nutrição personalizada para mulheres que desejam mais saúde, energia e qualidade de vida.",
   description:
     "Olá! Sou a Thays, pós-graduanda em nutrição estética, esportiva e saúde da mulher. Desenvolvo estratégias nutricionais personalizadas com foco em saúde integrativa, composição corporal, bem-estar e uma rotina possível de sustentar.",
   highlights: [
@@ -31,7 +31,7 @@ export const hero = {
     },
     {
       title: "Atendimento individualizado",
-      text: "Online e presencial sob consulta",
+      text: "Online",
     },
   ],
 };
@@ -55,19 +55,19 @@ export const about = {
 export const services = [
   {
     title: "Saúde da mulher",
-    text: "Acompanhamento nutricional com foco em saúde hormonal, composição corporal, bem-estar e vitalidade em diferentes fases da vida da mulher.",
+    text: "Acompanhamento nutricional para saúde hormonal, composição corporal e bem-estar feminino.",
   },
   {
     title: "Nutrição estética",
-    text: "Estratégias voltadas para autoestima, estética, organização alimentar e construção de resultados sustentáveis sem radicalismos.",
+    text: "Estratégias para melhorar a autoestima, a estética e criar hábitos alimentares duradouros.",
   },
   {
     title: "Nutrição esportiva",
-    text: "Acompanhamento para mulheres e praticantes de atividade física que buscam mais performance, recuperação, constância e evolução.",
+    text: "Acompanhamento para mulheres que buscam mais performance, recuperação e evolução.",
   },
   {
     title: "Plano alimentar adaptado à rotina",
-    text: "Condutas individualizadas que respeitam horários, preferências, contexto social, fase de vida e a realidade do seu dia a dia.",
+    text: "Planos alimentares personalizados para a sua rotina e objetivos.",
   },
 ];
 
@@ -170,7 +170,7 @@ export const metrics = [
     label: "Formatos de acompanhamento",
   },
   {
-    value: "Online + presencial",
+    value: "Online",
     label: "Atendimento sob consulta",
   },
 ];
@@ -192,7 +192,7 @@ export const faqs = [
   {
     question: "O atendimento é online ou presencial?",
     answer:
-      "O atendimento pode acontecer de forma online ou presencial, conforme disponibilidade e necessidade do acompanhamento.",
+      "O atendimento é somente online, conforme disponibilidade e necessidade do acompanhamento.",
   },
   {
     question: "Como funciona a primeira consulta?",

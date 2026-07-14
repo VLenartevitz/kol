@@ -88,14 +88,6 @@ export default function Page() {
                   fetchPriority="high"
                 />
               </div>
-              <div className="hero-visual-note">
-                <span className="eyebrow">KOL</span>
-                <strong>Presença, acolhimento e autoridade clínica.</strong>
-                <p>
-                  A foto real reforça a identidade da marca sem competir com a
-                  mensagem principal da página.
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -203,7 +195,6 @@ export default function Page() {
                   <div className="plan-shell">
                     <span className="tag">{plan.tag}</span>
                     <h3>{plan.title}</h3>
-                    <strong className="plan-price">{plan.price}</strong>
 
                     <p className="plan-highlight">{plan.highlight}</p>
 
@@ -256,7 +247,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="section">
+        {/* <section className="section">
           <div className="container proof-grid">
             <div className="metrics metrics-stack">
               {metrics.map((metric) => (
@@ -276,7 +267,7 @@ export default function Page() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="section alt" id="faq">
           <div className="container">
@@ -314,7 +305,7 @@ export default function Page() {
               </p>
 
               <div className="section-actions">
-                <a className="button" href={site.whatsapp}>
+                <a className="button whatsappbtn" href={site.whatsapp}>
                   Chamar no WhatsApp
                 </a>
               </div>
@@ -389,6 +380,8 @@ export default function Page() {
 
           <div className="footer-links">
             <a href={`mailto:${site.email}`}>{site.email}</a>
+            <a href={`mailto:${site.email2}`}>{site.email2}</a>
+
             <a href={site.instagram}>Instagram</a>
             <a href="#inicio">Política de privacidade</a>
             <span>&copy; 2026 KOL</span>

@@ -1,5 +1,16 @@
 import type { Metadata } from "next";
+import { Open_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kolnutricao.com.br"),
@@ -21,7 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={`${openSans.variable} ${playfair.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
