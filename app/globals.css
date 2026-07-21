@@ -396,6 +396,13 @@ h1 {
   margin-bottom: 42px;
 }
 
+.section-head.solo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 32px;
+}
+
 .section-head h2 {
   margin-top: 12px;
   font-size: clamp(2.2rem, 4.2vw, 4.4rem);
@@ -533,14 +540,98 @@ h1 {
   font-size: 1.45rem;
 }
 
-.icon {
+.service-grid {
   display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  background: var(--sage);
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  position: relative;
+  padding-inline: 8px;
+}
+
+.service-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(50% - 24px),
+      rgba(28, 27, 25, 0.4) 50%,
+      transparent calc(50% + 24px)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent calc(50% - 24px),
+      rgba(28, 27, 25, 0.4) 50%,
+      transparent calc(50% + 24px)
+    );
+}
+
+.service-card {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.service-card:hover img {
+  transform: scale(1.06);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 27, 25, 0.08) 0%,
+    rgba(28, 27, 25, 0.65) 100%
+  );
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.service-card:hover .service-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(28, 27, 25, 0.12) 0%,
+    rgba(28, 27, 25, 0.75) 100%
+  );
+}
+
+.service-text {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 28px;
   color: var(--surface);
-  font-weight: 900;
+}
+
+.service-text h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.service-text p {
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  opacity: 0.85;
 }
 
 .differentials {
@@ -549,27 +640,38 @@ h1 {
   gap: 1px;
   border: 1px solid var(--line);
   background: var(--line);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .differential {
-  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 160px;
   padding: 28px;
   background: var(--surface);
   color: var(--brown);
   font-weight: 700;
   line-height: 1.55;
+  transition: opacity 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+  position: relative;
+  cursor: pointer;
+  gap: 10px;
+  opacity: 0.55;
 }
 
-.principles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 18px;
+.differential.is-active {
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px var(--rose), 0 4px 20px rgba(223, 197, 185, 0.35);
+  transform: scale(1.03);
 }
 
-.principle {
-  min-height: 180px;
-  padding: 26px;
+.differential-description {
+  font-weight: 400;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .portfolio-card {
@@ -999,8 +1101,7 @@ h1 {
   }
 
   .grid.four,
-  .editorial-stats,
-  .principles {
+  .editorial-stats {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1053,12 +1154,33 @@ h1 {
     padding-top: 150px;
   }
 
+  .service-grid,
   .hero-meta,
   .grid.four,
   .grid.three,
-  .differentials,
-  .principles {
+  .differentials {
     grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    padding-inline: 6px;
+  }
+
+  .service-card {
+    min-height: 300px;
+  }
+
+  .service-text {
+    padding: 22px;
+  }
+
+  .differential {
+    min-height: 140px;
+    padding: 22px;
+  }
+
+  .differential-description {
+    font-size: 0.88rem;
   }
 
   .process-timeline {

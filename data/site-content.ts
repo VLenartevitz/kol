@@ -55,41 +55,42 @@ export const about = {
 
 export const services = [
   {
-    title: "Saúde da mulher",
-    text: "Acompanhamento nutricional para saúde hormonal, composição corporal e bem-estar feminino.",
+    title: "Advogada",
+    text: "Plano alimentar adaptado à rotina",
+    image: "/images/advogada.jpg",
   },
   {
-    title: "Nutrição estética",
-    text: "Estratégias para melhorar a autoestima, a estética e criar hábitos alimentares duradouros.",
+    title: "Corredora",
+    text: "Nutrição esportiva",
+    image: "/images/corredora.jpg",
   },
   {
-    title: "Nutrição esportiva",
-    text: "Acompanhamento para mulheres que buscam mais performance, recuperação e evolução.",
+    title: "Estética",
+    text: "Estética",
+    image: "/images/estetica.jpeg",
   },
   {
-    title: "Plano alimentar adaptado à rotina",
-    text: "Planos alimentares personalizados para a sua rotina e objetivos.",
+    title: "Saúde da Mulher",
+    text: "Saúde da mulher",
+    image: "/images/saude.jpeg",
   },
 ];
 
 export const differentials = [
-  "Acompanhamento contínuo",
-  "Individualidade absoluta",
-  "Adequação real à sua rotina",
-];
-
-export const principles = [
   {
     title: "Acompanhamento contínuo",
-    text: "Você não estará sozinha até a próxima consulta. O acompanhamento é próximo, com contato regular para entender sua adaptação ao plano, ajustar o que for necessário e fortalecer sua constância ao longo do processo.",
+    description:
+      "Você não estará sozinha até a próxima consulta. O acompanhamento é próximo, com contato regular para entender sua adaptação ao plano, ajustar o que for necessário e fortalecer sua constância ao longo do processo.",
   },
   {
     title: "Individualidade absoluta",
-    text: "Cada plano é pensado de forma 100% personalizada, considerando rotina, objetivos, necessidades clínicas, seletividade alimentar, uso de medicações, estética e performance.",
+    description:
+      "Cada plano é pensado de forma 100% personalizada, considerando rotina, objetivos, necessidades clínicas, seletividade alimentar, uso de medicações, estética e performance.",
   },
   {
     title: "Adequação real à sua rotina",
-    text: "A estratégia nutricional precisa caber na sua vida. O plano respeita horários, preferências e contexto social para tornar o processo mais leve, prazeroso e sustentável a longo prazo.",
+    description:
+      "A estratégia nutricional precisa caber na sua vida. O plano respeita horários, preferências e contexto social para tornar o processo mais leve, prazeroso e sustentável a longo prazo.",
   },
 ];
 

@@ -6,7 +6,6 @@ import {
   metrics,
   navigation,
   plans,
-  principles,
   process,
   services,
   site,
@@ -14,6 +13,7 @@ import {
 } from "../data/site-content";
 import { ProcessTimeline } from "./components/process-timeline";
 import { FaqAccordion } from "./components/faq-accordion";
+import { DifferentialsCarousel } from "./components/differentials-carousel";
 
 export default function Page() {
   const schema = {
@@ -159,26 +159,23 @@ export default function Page() {
 
         <section className="section" id="servicos">
           <div className="container">
-            <div className="section-head">
-              <div>
-                <span className="eyebrow">Serviços</span>
-                <h2>Como a KOL pode te acompanhar</h2>
-              </div>
-              <p>
-                O acompanhamento nutricional é construído para respeitar sua fase
-                de vida, sua rotina e os objetivos que fazem sentido para você.
-              </p>
+            <div className="section-head solo">
+              <span className="eyebrow">Serviços</span>
+              <h2>Como a KOL pode te acompanhar</h2>
             </div>
+          </div>
 
-            <div className="grid four">
-              {services.map((service, index) => (
-                <article className="card" key={service.title}>
-                  <span className="icon">{index + 1}</span>
+          <div className="service-grid">
+            {services.map((service) => (
+              <article className="service-card" key={service.title}>
+                <img src={service.image} alt={service.title} />
+                <div className="service-overlay" />
+                <div className="service-text">
                   <h3>{service.title}</h3>
                   <p>{service.text}</p>
-                </article>
-              ))}
-            </div>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -195,22 +192,7 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="differentials">
-              {differentials.map((item) => (
-                <div className="differential" key={item}>
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            <div className="principles">
-              {principles.map((item) => (
-                <div className="principle" key={item.title}>
-                  <span className="eyebrow">{item.title}</span>
-                  <p>{item.text}</p>
-                </div>
-              ))}
-            </div>
+            <DifferentialsCarousel items={differentials} />
           </div>
         </section>
 
