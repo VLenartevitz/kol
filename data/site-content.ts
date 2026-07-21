@@ -20,6 +20,7 @@ export const navigation = [
 ];
 
 export const hero = {
+  eyebrow: "KOL Nutrição",
   title:
     "Nutrição personalizada para mulheres que desejam mais saúde, energia e qualidade de vida.",
   description:
